@@ -18,9 +18,11 @@ export default function Navbar() {
         { to: '/admin', label: 'Dashboard' },
         { to: '/admin/reports', label: 'Reportes' },
         { to: '/admin/users', label: 'Usuarios' },
+        { to: '/mapa', label: 'Mapa Interactivo' },
       ]
     : [
         { to: '/dashboard', label: 'Mis Reportes' },
+        { to: '/mapa', label: 'Mapa Interactivo' },
         { to: '/reports/new', label: '+ Nuevo' },
       ];
 

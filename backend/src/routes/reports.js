@@ -30,6 +30,8 @@ router.post(
   ReportController.addComment
 );
 
+router.put('/:id', ReportController.update);
+
 router.delete('/:id', ReportController.delete);
 
 module.exports = router;

@@ -117,6 +117,30 @@ class ReportService {
     await report.deleteOne();
   }
 
+  async update(reportId, userId, userRole, data) {
+    const report = await Report.findById(reportId);
+    if (!report) {
+      const error = new Error('Report not found');
+      error.statusCode = 404;
+      throw error;
+    }
+    if (userRole !== 'admin' && report.citizen.toString() !== userId.toString()) {
+      const error = new Error('Not authorized');
+      error.statusCode = 403;
+      throw error;
+    }
+
+    const allowedFields = ['title', 'description', 'category', 'priority', 'location'];
+    allowedFields.forEach((field) => {
+      if (data[field] !== undefined) {
+        report[field] = data[field];
+      }
+    });
+
+    await report.save();
+    return this.getById(reportId);
+  }
+
   async getStats() {
     const [statusCounts, categoryCounts, recentReports] = await Promise.all([
       Report.aggregate([{ $group: { _id: '$status', count: { $sum: 1 } } }]),

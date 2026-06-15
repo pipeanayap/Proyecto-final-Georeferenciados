@@ -53,6 +53,15 @@ class ReportController {
       next(err);
     }
   }
+
+  async update(req, res, next) {
+    try {
+      const report = await ReportService.update(req.params.id, req.user._id, req.user.role, req.body);
+      res.json({ success: true, data: report });
+    } catch (err) {
+      next(err);
+    }
+  }
 }
 
 module.exports = new ReportController();

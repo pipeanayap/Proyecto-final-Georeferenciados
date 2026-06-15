@@ -8,6 +8,8 @@ const authRoutes = require('./routes/auth');
 const reportRoutes = require('./routes/reports');
 const adminRoutes = require('./routes/admin');
 const categoryRoutes = require('./routes/categories');
+const ubicacionRoutes = require('./routes/ubicaciones');
+const figuraRoutes = require('./routes/figuras');
 
 const app = express();
 
@@ -31,6 +33,12 @@ app.use('/admin', adminRoutes);
 
 app.use('/api/categories', categoryRoutes);
 app.use('/categories', categoryRoutes);
+
+app.use('/api/ubicaciones', ubicacionRoutes);
+app.use('/ubicaciones', ubicacionRoutes);
+
+app.use('/api/figuras', figuraRoutes);
+app.use('/figuras', figuraRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

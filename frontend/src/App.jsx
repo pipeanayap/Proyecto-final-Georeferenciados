@@ -13,6 +13,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminReports from './pages/admin/AdminReports';
 import AdminReportDetail from './pages/admin/AdminReportDetail';
 import AdminUsers from './pages/admin/AdminUsers';
+import MapaInteractivo from './pages/citizen/MapaInteractivo';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
 
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/mapa" element={<ProtectedRoute><MapaInteractivo /></ProtectedRoute>} />
           <Route path="/reports/new" element={<ProtectedRoute><NewReport /></ProtectedRoute>} />
           <Route path="/reports/:id" element={<ProtectedRoute><ReportDetail /></ProtectedRoute>} />
 
