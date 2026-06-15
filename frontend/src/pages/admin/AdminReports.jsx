@@ -87,13 +87,13 @@ export default function AdminReports() {
 
 const styles = {
   page: { maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' },
-  title: { margin: '0 0 24px', fontSize: '1.5rem', color: '#1e293b', display: 'flex', alignItems: 'center', gap: '10px' },
-  badge: { background: '#3b82f6', color: '#fff', borderRadius: '999px', padding: '2px 12px', fontSize: '0.85rem' },
+  title: { margin: '0 0 24px', fontSize: '1.5rem', color: '#ffffff', fontWeight: 800, letterSpacing: '-0.3px', display: 'flex', alignItems: 'center', gap: '10px' },
+  badge: { background: 'linear-gradient(135deg, #f5a623 0%, #e8930c 100%)', color: '#0e0e0e', borderRadius: '999px', padding: '3px 14px', fontSize: '0.85rem', fontWeight: 700 },
   filtersRow: { display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '24px' },
-  search: { flex: 1, minWidth: '200px', padding: '10px 14px', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.9rem' },
-  select: { padding: '10px 12px', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '0.9rem', background: '#fff' },
+  search: { flex: 1, minWidth: '200px', padding: '11px 16px', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', fontSize: '0.9rem', background: 'rgba(255,255,255,0.05)', color: '#fff', outline: 'none', transition: 'border-color 0.2s, box-shadow 0.2s' },
+  select: { padding: '11px 14px', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', fontSize: '0.9rem', background: 'rgba(28, 28, 30, 0.95)', color: '#d1d1d6', outline: 'none', transition: 'border-color 0.2s, box-shadow 0.2s' },
   grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' },
-  empty: { textAlign: 'center', color: '#94a3b8', padding: '40px 0' },
-  pagination: { display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', marginTop: '32px' },
-  pageBtn: { background: '#fff', border: '1px solid #e2e8f0', padding: '8px 16px', borderRadius: '8px', cursor: 'pointer' },
+  empty: { textAlign: 'center', color: '#48484a', padding: '40px 0' },
+  pagination: { display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '16px', marginTop: '32px', color: '#636366', fontSize: '0.9rem' },
+  pageBtn: { background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', color: '#d1d1d6', padding: '9px 18px', borderRadius: '10px', cursor: 'pointer', fontWeight: 500, transition: 'all 0.2s ease' },
 };
