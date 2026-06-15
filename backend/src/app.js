@@ -18,10 +18,19 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));
+app.get('/health', (_req, res) => res.json({ status: 'ok' }));
+
 app.use('/api/auth', authRoutes);
+app.use('/auth', authRoutes);
+
 app.use('/api/reports', reportRoutes);
+app.use('/reports', reportRoutes);
+
 app.use('/api/admin', adminRoutes);
+app.use('/admin', adminRoutes);
+
 app.use('/api/categories', categoryRoutes);
+app.use('/categories', categoryRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
