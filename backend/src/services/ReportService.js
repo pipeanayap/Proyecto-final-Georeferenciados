@@ -1,10 +1,9 @@
 const Report = require('../models/Report');
 const Comment = require('../models/Comment');
-const { cloudinary } = require('../config/cloudinary');
 
 class ReportService {
   async create(citizenId, data, files = []) {
-    const photos = files.map((f) => ({ url: f.path, publicId: f.filename }));
+    const photos = [];
     const report = await Report.create({ ...data, citizen: citizenId, photos });
     return report.populate(['category', 'citizen']);
   }
@@ -113,9 +112,6 @@ class ReportService {
       const error = new Error('Not authorized');
       error.statusCode = 403;
       throw error;
-    }
-    for (const photo of report.photos) {
-      await cloudinary.uploader.destroy(photo.publicId).catch(() => {});
     }
     await Comment.deleteMany({ report: reportId });
     await report.deleteOne();
