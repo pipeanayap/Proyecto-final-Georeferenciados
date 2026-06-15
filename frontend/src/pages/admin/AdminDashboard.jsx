@@ -22,10 +22,10 @@ export default function AdminDashboard() {
   if (loading) return <><Navbar /><Spinner /></>;
 
   const STATUS_CARDS = [
-    { key: 'pending',     label: 'Pendientes',  color: '#f59e0b', bg: '#fef3c7' },
-    { key: 'in_progress', label: 'En proceso',  color: '#3b82f6', bg: '#dbeafe' },
-    { key: 'resolved',    label: 'Resueltos',   color: '#22c55e', bg: '#dcfce7' },
-    { key: 'rejected',    label: 'Rechazados',  color: '#ef4444', bg: '#fee2e2' },
+    { key: 'pending',     label: 'Pendientes',  color: '#f5a623', bg: 'rgba(245,158,11,0.1)' },
+    { key: 'in_progress', label: 'En proceso',  color: '#60a5fa', bg: 'rgba(59,130,246,0.1)' },
+    { key: 'resolved',    label: 'Resueltos',   color: '#4ade80', bg: 'rgba(34,197,94,0.1)' },
+    { key: 'rejected',    label: 'Rechazados',  color: '#f87171', bg: 'rgba(239,68,68,0.1)' },
   ];
 
   return (
@@ -41,12 +41,12 @@ export default function AdminDashboard() {
               <div style={styles.statLabel}>{label}</div>
             </div>
           ))}
-          <div style={{ ...styles.statCard, background: '#f0fdf4' }}>
-            <div style={{ ...styles.statNumber, color: '#16a34a' }}>{stats?.lastWeek || 0}</div>
+          <div style={{ ...styles.statCard, background: 'rgba(34,197,94,0.08)' }}>
+            <div style={{ ...styles.statNumber, color: '#4ade80' }}>{stats?.lastWeek || 0}</div>
             <div style={styles.statLabel}>Esta semana</div>
           </div>
-          <div style={{ ...styles.statCard, background: '#f8fafc' }}>
-            <div style={{ ...styles.statNumber, color: '#475569' }}>{stats?.total || 0}</div>
+          <div style={{ ...styles.statCard, background: 'rgba(255,255,255,0.04)' }}>
+            <div style={{ ...styles.statNumber, color: '#d1d1d6' }}>{stats?.total || 0}</div>
             <div style={styles.statLabel}>Total</div>
           </div>
         </div>
@@ -103,30 +103,30 @@ export default function AdminDashboard() {
 }
 
 const STATUS_INLINE = {
-  pending:     { background: '#fef3c7', color: '#92400e', padding: '2px 8px', borderRadius: '4px', fontSize: '0.78rem' },
-  in_progress: { background: '#dbeafe', color: '#1e40af', padding: '2px 8px', borderRadius: '4px', fontSize: '0.78rem' },
-  resolved:    { background: '#dcfce7', color: '#166534', padding: '2px 8px', borderRadius: '4px', fontSize: '0.78rem' },
-  rejected:    { background: '#fee2e2', color: '#991b1b', padding: '2px 8px', borderRadius: '4px', fontSize: '0.78rem' },
+  pending:     { background: 'rgba(245,158,11,0.15)', color: '#f5a623', padding: '2px 10px', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 600 },
+  in_progress: { background: 'rgba(59,130,246,0.15)', color: '#60a5fa', padding: '2px 10px', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 600 },
+  resolved:    { background: 'rgba(34,197,94,0.15)', color: '#4ade80', padding: '2px 10px', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 600 },
+  rejected:    { background: 'rgba(239,68,68,0.15)', color: '#f87171', padding: '2px 10px', borderRadius: '6px', fontSize: '0.78rem', fontWeight: 600 },
 };
 
 const styles = {
   page: { maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' },
-  title: { margin: '0 0 28px', fontSize: '1.6rem', color: '#1e293b' },
+  title: { margin: '0 0 28px', fontSize: '1.6rem', color: '#ffffff', fontWeight: 800, letterSpacing: '-0.3px' },
   statsGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '16px', marginBottom: '28px' },
-  statCard: { borderRadius: '12px', padding: '20px', textAlign: 'center' },
-  statNumber: { fontSize: '2rem', fontWeight: 700 },
-  statLabel: { color: '#374151', fontSize: '0.85rem', marginTop: '4px' },
+  statCard: { borderRadius: '14px', padding: '22px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.06)' },
+  statNumber: { fontSize: '2rem', fontWeight: 800 },
+  statLabel: { color: '#8e8e93', fontSize: '0.85rem', marginTop: '4px', fontWeight: 500 },
   bottomGrid: { display: 'grid', gridTemplateColumns: '1fr 300px', gap: '24px' },
-  card: { background: '#fff', borderRadius: '12px', padding: '24px', boxShadow: '0 1px 4px rgba(0,0,0,.08)' },
+  card: { background: 'rgba(28, 28, 30, 0.95)', borderRadius: '16px', padding: '24px', border: '1px solid rgba(255,255,255,0.06)' },
   cardHeader: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' },
-  cardTitle: { margin: 0, fontSize: '1rem', color: '#1e293b', fontWeight: 600 },
-  viewAll: { color: '#3b82f6', fontSize: '0.85rem', textDecoration: 'none' },
+  cardTitle: { margin: 0, fontSize: '1rem', color: '#ffffff', fontWeight: 700 },
+  viewAll: { color: '#f5a623', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600 },
   table: { width: '100%', borderCollapse: 'collapse' },
-  th: { textAlign: 'left', padding: '8px 12px', fontSize: '0.78rem', color: '#94a3b8', fontWeight: 600, borderBottom: '1px solid #f1f5f9', textTransform: 'uppercase' },
-  tr: { borderBottom: '1px solid #f8fafc' },
-  td: { padding: '10px 12px', fontSize: '0.88rem', color: '#374151' },
-  link: { color: '#3b82f6', textDecoration: 'none', fontSize: '0.85rem' },
+  th: { textAlign: 'left', padding: '8px 12px', fontSize: '0.78rem', color: '#48484a', fontWeight: 600, borderBottom: '1px solid rgba(255,255,255,0.06)', textTransform: 'uppercase', letterSpacing: '0.5px' },
+  tr: { borderBottom: '1px solid rgba(255,255,255,0.03)' },
+  td: { padding: '10px 12px', fontSize: '0.88rem', color: '#d1d1d6' },
+  link: { color: '#f5a623', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 600 },
   categories: { display: 'flex', flexDirection: 'column', gap: '10px' },
-  catRow: { display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #f1f5f9', fontSize: '0.9rem', color: '#374151' },
-  catCount: { fontWeight: 700, color: '#1e293b' },
+  catRow: { display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.04)', fontSize: '0.9rem', color: '#d1d1d6' },
+  catCount: { fontWeight: 700, color: '#f5a623' },
 };
