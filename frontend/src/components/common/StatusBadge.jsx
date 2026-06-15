@@ -1,14 +1,14 @@
 const STATUS_CONFIG = {
-  pending:     { label: 'Pendiente',   bg: '#fef3c7', color: '#92400e' },
-  in_progress: { label: 'En proceso',  bg: '#dbeafe', color: '#1e40af' },
-  resolved:    { label: 'Resuelto',    bg: '#dcfce7', color: '#166534' },
-  rejected:    { label: 'Rechazado',   bg: '#fee2e2', color: '#991b1b' },
+  pending:     { label: 'Pendiente',   bg: 'rgba(245,158,11,0.15)', color: '#f5a623' },
+  in_progress: { label: 'En proceso',  bg: 'rgba(59,130,246,0.15)', color: '#60a5fa' },
+  resolved:    { label: 'Resuelto',    bg: 'rgba(34,197,94,0.15)', color: '#4ade80' },
+  rejected:    { label: 'Rechazado',   bg: 'rgba(239,68,68,0.15)', color: '#f87171' },
 };
 
 export default function StatusBadge({ status }) {
-  const cfg = STATUS_CONFIG[status] || { label: status, bg: '#f1f5f9', color: '#475569' };
+  const cfg = STATUS_CONFIG[status] || { label: status, bg: 'rgba(255,255,255,0.08)', color: '#8e8e93' };
   return (
-    <span style={{ background: cfg.bg, color: cfg.color, padding: '3px 10px', borderRadius: '999px', fontSize: '0.78rem', fontWeight: 600, whiteSpace: 'nowrap' }}>
+    <span style={{ background: cfg.bg, color: cfg.color, padding: '4px 12px', borderRadius: '999px', fontSize: '0.78rem', fontWeight: 600, whiteSpace: 'nowrap', border: `1px solid ${cfg.color}22` }}>
       {cfg.label}
     </span>
   );
